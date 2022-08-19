@@ -22,7 +22,7 @@
     },
     "autoload": {
         "psr-4": {
-            "OjiSatriani\\SsoRiau\\": "src"
+            "OjiSatriani\\": "src/"
         }
     }
 }
