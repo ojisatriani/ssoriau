@@ -35,7 +35,6 @@ class SsoRiauServiceProvider extends ServiceProvider
             $ssoriau = new SsoRiau($config);
             return $ssoriau;
         });
-        $this->app->register('OjiSatriani\SsoRiau\SsoRiauServiceProvider');
     }
 
     public function provides()
