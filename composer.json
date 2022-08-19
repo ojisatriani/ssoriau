@@ -1,0 +1,28 @@
+{
+    "name": "ojisatriani/ssoriau",
+    "description": "SSO RIAU",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Oji Satriani",
+            "email": "oji.satriani@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.2.0"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "OjiSatriani\\SsoRiau\\SsoRiauServiceProvider"
+            ]
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "OjiSatriani\\SsoRiau\\": "src"
+        }
+    }
+}
