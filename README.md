@@ -1,6 +1,28 @@
 ## SSO Riau
 SSO Riau
 
+## Installation
+
+Require the `ojisatriani/ssoriau` package in your `composer.json` and update your dependencies:
+```sh
+composer require ojisatriani/ssoriau
+```
+
+## Configuration
+
+Open the file `config/app.php`. and then add following service provider (This step is optional if you are using Laravel 5.5+):
+```$php
+'providers' => [
+    // ...
+    OjiSatriani\SsoRiau\SsoRiauServiceProvider::class,
+],
+```
+
+The defaults are set in `config/ssoriau.php`. Publish the config to copy the file to your own config:
+```sh
+php artisan vendor:publish --provider="OjiSatriani\SsoRiau\SsoRiauServiceProvider" --tag="config"
+```
+
 Config Sso Riau:
 ----
 

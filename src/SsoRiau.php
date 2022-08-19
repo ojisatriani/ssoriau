@@ -1,6 +1,6 @@
 <?php
 
-namespace OjiSatriani;
+namespace OjiSatriani\SsoRiau;
 
 /*
  * Nama   : File SSO Riau client library

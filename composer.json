@@ -16,13 +16,13 @@
     "extra": {
         "laravel": {
             "providers": [
-                "OjiSatriani\\SsoRiauServiceProvider"
+                "OjiSatriani\\SsoRiau\\SsoRiauServiceProvider"
             ]
         }
     },
     "autoload": {
         "psr-4": {
-            "OjiSatriani\\": "src/"
+            "OjiSatriani\\SsoRiau\\": "src"
         }
     }
 }

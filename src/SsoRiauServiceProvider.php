@@ -1,5 +1,5 @@
 <?php
-namespace OjiSatriani;
+namespace OjiSatriani\SsoRiau;
 
 use Illuminate\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
