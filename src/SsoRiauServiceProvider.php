@@ -1,5 +1,5 @@
 <?php
-namespace OjiSatriani\SsoRiau;
+namespace OjiSatriani;
 
 use Illuminate\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
@@ -49,9 +49,9 @@ class SsoRiauServiceProvider extends ServiceProvider
      */
     protected function registerConfigurations()
     {
-        $this->mergeConfigFrom($this->packagePath('config/config.php'), 'ssoriau');
+        $this->mergeConfigFrom(__DIR__.'/../config/config.php', 'ssoriau');
         $this->publishes([
-            $this->packagePath('config/config.php') => config_path('ssoriau.php')
+            __DIR__.'/../config/config.php' => config_path('ssoriau.php')
         ], 'config');
     }
 

@@ -16,7 +16,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "OjiSatriani\\SsoRiau\\SsoRiauServiceProvider"
+                "OjiSatriani\\SsoRiauServiceProvider"
             ]
         }
     },
