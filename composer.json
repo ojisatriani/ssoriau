@@ -16,8 +16,11 @@
     "extra": {
         "laravel": {
             "providers": [
-                "OjiSatriani\\SsoRiau\\SsoRiauServiceProvider"
-            ]
+                "OjiSatriani\\SsoRiau\\Laravel\\ServiceProvider"
+            ],
+            "aliases": {
+                "SsoClientLibrary": "OjiSatriani\\SsoRiau\\Laravel\\Facade"
+            }
         }
     },
     "autoload": {

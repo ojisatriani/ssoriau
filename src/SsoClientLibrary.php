@@ -20,14 +20,14 @@ namespace OjiSatriani\SsoRiau;
  * 
  */
 
-class SsoRiau {
+class SsoClientLibrary {
 
     protected $clientId;
     protected $clientSecret;
     protected $redirectUri;
     protected $targetUri;
 
-    public function __construct($config) {
+    public function __construct(array $config = []) {
         $this->clientId = $config['client_id'] ?? '';   // 3rd Party client Id
         $this->clientSecret = $config['client_secret'] ?? '';   // 3rd Party client secret
         $this->redirectUri = $config['redirect_uri'] ?? '';  // 3rd Party url redirect or url to handle callback
