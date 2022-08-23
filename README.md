@@ -37,27 +37,33 @@ Check SSO session :
 ----
 
 ```$php
-use SsoRiau\SsoClientLibrary;
-$objSso = new SsoClientLibrary();
-$objSso->ssoRequest();
+/**
+* SSO login : check SSO session
+*/
+public function check(SsoClientLibrary $sso)
+{
+    $sso->ssoRequest();
+}
 
 ```
 Consume SSO session :
 ----
 
 ```$php
-$objSso = new SsoClientLibrary();
-$data_access_token = $objSso->ssoCallback();
-if (!empty($data_access_token)) {
-    $data_access_token = json_decode($data_access_token);
-    $access_token = $data_access_token->access_token; // store access_token within the session if needed?
-}
+public function callback(Request $request, SsoClientLibrary $sso)
+{
+    $data_access_token = $sso->ssoCallback();
+    if (!empty($data_access_token)) {
+        $data_access_token = json_decode($data_access_token);
+        $access_token = $data_access_token->access_token; // store access_token within the session if needed?
+    }
 
-if ($access_token != '') {
-    //fetch ssoUserInfo
-    $ssoUserInfo = $objSso->ssoUserInfo($access_token);
-    $ssoUserInfo = json_decode($ssoUserInfo);
-    $email = $ssoUserInfo->email;
+    if ($access_token != '') {
+        //fetch ssoUserInfo
+        $ssoUserInfo = $sso->ssoUserInfo($access_token);
+        $ssoUserInfo = json_decode($ssoUserInfo);
+        $email = $ssoUserInfo->email;
+    }
 }
 
 ```
