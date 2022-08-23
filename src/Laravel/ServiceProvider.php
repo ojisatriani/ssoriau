@@ -15,9 +15,9 @@ class ServiceProvider extends BaseServiceProvider
     public function boot()
     {
         if ($this->app->runningInConsole()) {
-            $this->mergeConfigFrom(__DIR__.'/../config/config.php', 'ssoriau');
+            $this->mergeConfigFrom(__DIR__.'/../../config/config.php', 'ssoriau');
             $this->publishes([
-                __DIR__.'/../config/config.php' => config_path('ssoriau.php')
+                __DIR__.'/../../config/config.php' => config_path('ssoriau.php')
             ], 'config');
         }
     }
