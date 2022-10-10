@@ -1,5 +1,5 @@
-## SSO Riau
-SSO Riau
+## SSO Riau - Laravel
+SSO Riau - Laravel
 
 ## Installation
 
