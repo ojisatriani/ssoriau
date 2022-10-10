@@ -125,4 +125,14 @@ class SsoClientLibrary {
         die('Something went wrong, please trace back your action!');
     }
 
+    public function ssoLogout($url_back = '') {
+        $query = http_build_query([
+            'url_back' => $url_back,
+        ]);
+
+        $_url = $this->targetUri ."sso/logout?" . $query;
+        header("Location: " . $_url);
+        die();
+    }
+
 }

@@ -67,3 +67,13 @@ public function callback(Request $request, SsoClientLibrary $sso)
 }
 
 ```
+Logout SSO session :
+----
+
+```$php
+use SsoRiau\SsoClientLibrary;
+
+$url_back = {return_url};
+$objSso = new SsoClientLibrary();
+$objSso->ssoLogout($url_back);
+```
