@@ -40,6 +40,7 @@ Check SSO session :
 /**
 * SSO login : check SSO session
 */
+use OjiSatriani\SsoRiau\\SsoClientLibrary;
 public function check(SsoClientLibrary $sso)
 {
     $sso->ssoRequest();
@@ -50,6 +51,7 @@ Consume SSO session :
 ----
 
 ```$php
+use OjiSatriani\SsoRiau\\SsoClientLibrary;
 public function callback(Request $request, SsoClientLibrary $sso)
 {
     $data_access_token = $sso->ssoCallback();
@@ -71,9 +73,10 @@ Logout SSO session :
 ----
 
 ```$php
-use SsoRiau\SsoClientLibrary;
-
-$url_back = {return_url};
-$objSso = new SsoClientLibrary();
-$objSso->ssoLogout($url_back);
+use OjiSatriani\SsoRiau\\SsoClientLibrary;
+public function logout(SsoClientLibrary $sso)
+{
+    $url_back = {return_url};
+    $sso->ssoLogout($url_back);
+}
 ```
