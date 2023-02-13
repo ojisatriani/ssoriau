@@ -45,13 +45,17 @@ class SsoClientLibrary {
         ]);
 
         $_url = $this->targetUri ."oauth/authorize?" . $query;
-        echo '<pre>';print_r($_url);
+        // echo '<pre>';print_r($_url);
         header("Location: " . $_url);
         die();
     }
 
     public function ssoCallback() {
-        if (isset($_GET['code']) && !empty(($_GET['code']))) {
+        $url    = parse_url($this->redirectUri);
+        $code   = str_replace($url['path'] . '?code=','',$_SERVER['REQUEST_URI']);
+        $code   = explode('&',$code);
+        $code   = $code[0] ?? '';
+        if ($code != '') {
             $_access_token = '';
             $_errors = '';
 
@@ -60,7 +64,7 @@ class SsoClientLibrary {
                 'client_id' => $this->clientId,
                 'client_secret' => $this->clientSecret,
                 'redirect_uri' => $this->redirectUri,
-                'code' => $_GET['code'],
+                'code' => $code,
             ];
             $arr_token = $this->__runCurl('POST', $this->targetUri."oauth/token", $_posts);
             return $arr_token;
