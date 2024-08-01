@@ -9,7 +9,7 @@
             "email": "oji.satriani@gmail.com"
         }
     ],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "require": {
         "php": ">=7.2.0"
     },
@@ -27,5 +27,6 @@
         "psr-4": {
             "OjiSatriani\\SsoRiau\\": "src"
         }
-    }
+    },
+    "version": "1.0.0"
 }
